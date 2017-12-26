@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ConcessionCardExpiredOnClassDate</fullName>
+    <active>true</active>
+    <description>Throw an error if the selected concession card will have expired by the date of the class 
+Note that this assumes that Class_Date > null does not evaluate to TRUE in order to allow Concession Cards which do not expire</description>
+    <errorConditionFormula>DateValue(Scheduled_Class__r.Class_Date__c) >  Concession_Card__r.Expiry_Date__c</errorConditionFormula>
+    <errorDisplayField>Concession_Card__c</errorDisplayField>
+    <errorMessage>The Concession Card selected expires before the date of this Scheduled Class</errorMessage>
+</ValidationRule>

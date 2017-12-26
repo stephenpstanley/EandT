@@ -1,0 +1,4 @@
+<apex:page standardController="Class_Attendance__c" tabstyle="Account">
+    <apex:enhancedlist type="Class_Attendance__c" height="400" rowsperpage="25"/>
+     
+</apex:page>

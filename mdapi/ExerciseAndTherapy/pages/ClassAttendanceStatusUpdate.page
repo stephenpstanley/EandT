@@ -1,0 +1,24 @@
+<apex:page standardController="Class_Attendance__c" 
+           recordSetVar="ClsAtts"
+           tabStyle="Class_Attendance__c" sidebar="false">
+  <apex:form >
+    <apex:pageBlock >
+      <apex:pageMessages />
+      <apex:pageBlockButtons >
+        <apex:commandButton value="Save" 
+                            action="{!save}"/>
+      </apex:pageBlockButtons>
+      <apex:pageBlockTable value="{!ClsAtts}" 
+                           var="clsAtt">
+        <apex:column headerValue="Student" value="{!clsAtt.Student__c}"/>
+        <apex:column headerValue="Payment Method" value="{!clsAtt.Payment_Method__c}"/>
+        <apex:column headerValue="Attendance Status">
+          <apex:inputField value="{!clsAtt.Status__c}"/>
+        </apex:column>
+        <apex:column headerValue="Cancel Date">
+          <apex:inputField value="{!clsAtt.Cancel_Date__c}"/>
+        </apex:column>
+      </apex:pageBlockTable>      
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

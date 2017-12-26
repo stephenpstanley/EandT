@@ -1,0 +1,10 @@
+[
+    {
+        "sobject": "Invoice__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "Invoice__cs.json"
+        ]
+    }
+]

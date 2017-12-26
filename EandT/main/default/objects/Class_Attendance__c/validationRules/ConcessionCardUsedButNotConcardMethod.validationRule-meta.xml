@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ConcessionCardUsedButNotConcardMethod</fullName>
+    <active>true</active>
+    <description>If a concession card is entered in the record, then the price basis must be "Concession Card"</description>
+    <errorConditionFormula>(Concession_Card__c != "") &amp;&amp;
+NOT ISPICKVAL(Payment_Method__c, "Concession Card")</errorConditionFormula>
+    <errorDisplayField>Payment_Method__c</errorDisplayField>
+    <errorMessage>If a Concession Card has been allocated to this Class Attendance, then the  Price Basis must be "Concession Card"</errorMessage>
+</ValidationRule>

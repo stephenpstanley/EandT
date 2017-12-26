@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>If place(s) come free on a Scheduled Class, Waitlisted Students can be automatically be promoted to Booked.  This template is used to them that they have been automaticall Booked</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Notify Waitlisted converted to Booked</name>
+    <style>none</style>
+    <subject>Exercise &amp; Therapy Alert: Your waitlist entry has been converted to a confirmed booking</subject>
+    <textOnly>Your Waitlist entry has been converted to a confirmed booking.  
+
+Details:
+Date/Time {!Scheduled_Class__c.Class_Date__c} 
+Class: {!Scheduled_Class__c.Class__c} 
+Location: {!Scheduled_Class__c.Location__c}  
+
+Looking forward to seeing you in class  
+
+
+Exercise &amp; Therapy</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

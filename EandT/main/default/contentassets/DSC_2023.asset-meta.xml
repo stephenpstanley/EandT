@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentAsset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <language>en_US</language>
+    <masterLabel>DSC_2023</masterLabel>
+    <originNetwork>Exercise &amp; Therapy</originNetwork>
+    <relationships>
+        <network>
+            <access>VIEWER</access>
+            <name>Exercise &amp; Therapy</name>
+        </network>
+        <organization>
+            <access>VIEWER</access>
+        </organization>
+        <workspace>
+            <access>INFERRED</access>
+            <isManagingWorkspace>true</isManagingWorkspace>
+            <name>sfdc_asset_company_assets</name>
+        </workspace>
+    </relationships>
+    <versions>
+        <version>
+            <number>1</number>
+            <pathOnClient>DSC_2023.JPG</pathOnClient>
+        </version>
+    </versions>
+</ContentAsset>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Class_Date__c</columns>
+    <columns>Class__c</columns>
+    <columns>Status__c</columns>
+    <columns>Student_Count__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Invoice__c</columns>
+    <columns>Invoice_Comments__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <sharedTo>
+        <group>Internal_Users</group>
+    </sharedTo>
+</ListView>

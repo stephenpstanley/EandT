@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>To allow student to see their own class attendance records</description>
+    <name>Student Portal User</name>
+    <profiles>Student Portal User</profiles>
+</SharingSet>

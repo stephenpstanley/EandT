@@ -1,0 +1,10 @@
+[
+    {
+        "sobject": "Concession_Card__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "Concession_Card__cs.json"
+        ]
+    }
+]

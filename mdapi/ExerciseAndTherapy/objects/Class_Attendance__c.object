@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The occurrence of a student attending a class.  Used to track what classes they received and paid for, if canceled and fee forfeit for late notice</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Actual_Cost__c</fullName>
+        <description>If cancelled with more that a day&apos;s notice, then no charge for this class, otherwise full cost for the class will be applied</description>
+        <externalId>false</externalId>
+        <formula>IF(  ISPICKVAL( Status__c , &quot;Canceled&quot;) &amp;&amp; NOT Cancellation_Fee_Due__c, 0,
+IF  (ISPICKVAL( Payment_Method__c, &quot;Casual&quot;), Scheduled_Class__r.Class__r.Casual_Price__c,
+    IF  (ISPICKVAL( Payment_Method__c, &quot;Concession Card&quot;),  Scheduled_Class__r.Class__r.Concession_Price__c ,
+        IF  (ISPICKVAL(  Payment_Method__c, &quot;On Account&quot;),  Scheduled_Class__r.Class__r.On_Account_Price__c, 0 ))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>If cancelled with more that a day&apos;s notice, then no charge for this class, otherwise full cost for the class will be applied</inlineHelpText>
+        <label>Actual Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Sessions__c</fullName>
+        <description>Number of session that are charged for attending this class.  If cancelled with more that 1 day&apos;s notice then no charge will be applied</description>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( Status__c , &quot;Canceled&quot;) &amp;&amp; NOT Cancellation_Fee_Due__c, 0, Scheduled_Class__r.Class__r.Session_Count__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Actual Sessions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Amount_Owed__c</fullName>
+        <description>Populated whenever a Class Attendance record is created or updated by copying the value in the Actual Cost formula field where the payment type is Casual and the checkbox that shows if the class has been paid for is not set. This is to allow a roll-up summary on the Student record to show unpaid balances</description>
+        <externalId>false</externalId>
+        <label>Amount Owed</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Cancel_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If a person cancels, this can be used to determine if fees are forfeit for late notice</inlineHelpText>
+        <label>Cancel Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Cancellation_Fee_Due__c</fullName>
+        <description>If less than one day&apos;s notice given on cancellation then the class fee is payable</description>
+        <externalId>false</externalId>
+        <formula>Class_Date__c -  Cancel_Date__c &lt;1</formula>
+        <label>Cancellation Fee Due</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Casual_Fee_Paid__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Casual Fee Paid</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Class_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Scheduled_Class__r.Class_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Class Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Class_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Scheduled_Class__r.Class__r.Name</formula>
+        <label>Class Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Class_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Scheduled_Class__r.Type__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Class Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Concession_Card__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Concession Card</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Selected Concession Card is not allocated to this Student</errorMessage>
+            <filterItems>
+                <field>Concession_Card__c.Card_Expired__c</field>
+                <operation>notEqual</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Concession_Card__c</referenceTo>
+        <relationshipLabel>Class Attendances</relationshipLabel>
+        <relationshipName>Class_Attendances</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Fees_owed__c</fullName>
+        <description>Repeat of Fees Owed field on the Contact record so that it is easy for the tutor to see o/s fees when they check the student in to the class</description>
+        <externalId>false</externalId>
+        <formula>Student__r.Fees_owed__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Repeat of Fees Owed field on the Contact record so that it is easy for the tutor to see o/s fees when they check the student in to the class</inlineHelpText>
+        <label>Total Outstanding Fees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Price Basis</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Casual</fullName>
+                    <default>true</default>
+                    <label>Casual</label>
+                </value>
+                <value>
+                    <fullName>Concession Card</fullName>
+                    <default>false</default>
+                    <label>Concession Card</label>
+                </value>
+                <value>
+                    <fullName>On Account</fullName>
+                    <default>false</default>
+                    <label>On Account</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Scheduled_Class__c</fullName>
+        <externalId>false</externalId>
+        <label>Scheduled Class</label>
+        <referenceTo>Scheduled_Class__c</referenceTo>
+        <relationshipLabel>Class Attendances</relationshipLabel>
+        <relationshipName>Class_Attendances</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Booked</fullName>
+                    <default>true</default>
+                    <label>Booked</label>
+                </value>
+                <value>
+                    <fullName>Waitlisted</fullName>
+                    <default>false</default>
+                    <label>Waitlisted</label>
+                </value>
+                <value>
+                    <fullName>Attended</fullName>
+                    <default>false</default>
+                    <label>Attended</label>
+                </value>
+                <value>
+                    <fullName>No Show</fullName>
+                    <default>false</default>
+                    <label>No Show</label>
+                </value>
+                <value>
+                    <fullName>Canceled</fullName>
+                    <default>false</default>
+                    <label>Canceled</label>
+                </value>
+                <value>
+                    <fullName>Waitlist - Canceled</fullName>
+                    <default>false</default>
+                    <label>Waitlist - Canceled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Student__c</fullName>
+        <externalId>false</externalId>
+        <label>Student</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The record selected is not an individual who can be booked on a Scheduled Class</errorMessage>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Person Account</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Class Attendances</relationshipLabel>
+        <relationshipName>Class_Attendances</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Student_email_copy_hidden__c</fullName>
+        <externalId>false</externalId>
+        <label>Student email copy (hidden)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <label>Class Attendance</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Class_Date__c</columns>
+        <columns>Student__c</columns>
+        <columns>Status__c</columns>
+        <columns>Payment_Method__c</columns>
+        <columns>Actual_Cost__c</columns>
+        <columns>Concession_Card__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Last7Days_Classes</fullName>
+        <columns>Class_Name__c</columns>
+        <columns>Class_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Status__c</columns>
+        <columns>Cancel_Date__c</columns>
+        <columns>Payment_Method__c</columns>
+        <columns>Concession_Card__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Class_Date__c</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:7</value>
+        </filters>
+        <label>Last 7 days Classes</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Previous_Classes</fullName>
+        <columns>Class_Date__c</columns>
+        <columns>Class_Name__c</columns>
+        <columns>Status__c</columns>
+        <columns>Concession_Card__c</columns>
+        <columns>Payment_Method__c</columns>
+        <columns>Actual_Cost__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Class_Date__c</field>
+            <operation>lessThan</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>My Previous Classes</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Upcoming_Classes</fullName>
+        <columns>Class_Date__c</columns>
+        <columns>Class_Name__c</columns>
+        <columns>Status__c</columns>
+        <columns>Concession_Card__c</columns>
+        <columns>Payment_Method__c</columns>
+        <columns>Actual_Cost__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Class_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>My Upcoming Classes</label>
+    </listViews>
+    <listViews>
+        <fullName>Next7Days_Classes</fullName>
+        <columns>Class_Name__c</columns>
+        <columns>Class_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Status__c</columns>
+        <columns>Cancel_Date__c</columns>
+        <columns>Payment_Method__c</columns>
+        <columns>Concession_Card__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Class_Date__c</field>
+            <operation>equals</operation>
+            <value>NEXT_N_DAYS:7</value>
+        </filters>
+        <label>Next 7 days Classes</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Todays_Classes</fullName>
+        <columns>Class_Name__c</columns>
+        <columns>Class_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Status__c</columns>
+        <columns>Cancel_Date__c</columns>
+        <columns>Payment_Method__c</columns>
+        <columns>Concession_Card__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Class_Date__c</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Today&apos;s Classes</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Tomorrows_Classes</fullName>
+        <columns>Class_Name__c</columns>
+        <columns>Class_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Status__c</columns>
+        <columns>Cancel_Date__c</columns>
+        <columns>Payment_Method__c</columns>
+        <columns>Concession_Card__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Class_Date__c</field>
+            <operation>equals</operation>
+            <value>TOMORROW</value>
+        </filters>
+        <label>Tomorrow&apos;s Classes</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>CA-{000000}</displayFormat>
+        <label>Class Attendance Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Class Attendances</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Class_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Student__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Actual_Cost__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Actual_Sessions__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Payment_Method__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Concession_Card__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Cancel_Date__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Student__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Class_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Actual_Cost__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Actual_Sessions__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Payment_Method__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Concession_Card__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Cancel_Date__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Student__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Class_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Actual_Cost__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Actual_Sessions__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Payment_Method__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Concession_Card__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Cancel_Date__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Actual_Cost__c</searchFilterFields>
+        <searchFilterFields>Actual_Sessions__c</searchFilterFields>
+        <searchFilterFields>Cancel_Date__c</searchFilterFields>
+        <searchFilterFields>Class_Date__c</searchFilterFields>
+        <searchFilterFields>Concession_Card__c</searchFilterFields>
+        <searchFilterFields>Payment_Method__c</searchFilterFields>
+        <searchFilterFields>Scheduled_Class__c</searchFilterFields>
+        <searchFilterFields>Status__c</searchFilterFields>
+        <searchFilterFields>Student__c</searchFilterFields>
+        <searchResultsAdditionalFields>Student__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Class_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Actual_Cost__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Actual_Sessions__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Payment_Method__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Concession_Card__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Cancel_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Con_card_class_type_must_match_class_typ</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPickval( Payment_Method__c , &quot;Concession Card&quot;) 
+&amp;&amp;
+( Scheduled_Class__r.Class__r.Class_Type__c   &lt;&gt;  Concession_Card__r.Class_Type__c )</errorConditionFormula>
+        <errorDisplayField>Concession_Card__c</errorDisplayField>
+        <errorMessage>The selected Concession card must be for the same class type as the class you are using it on</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ConcessionCardExpired</fullName>
+        <active>true</active>
+        <description>Throw an error if the concession card selectyedhas already expired</description>
+        <errorConditionFormula>Concession_Card__r.Card_Expired__c = TRUE
+ &amp;&amp;   ISPICKVAL(Payment_Method__c, &quot;Concession Card&quot;)</errorConditionFormula>
+        <errorDisplayField>Concession_Card__c</errorDisplayField>
+        <errorMessage>The Concession Card selected has expired</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ConcessionCardExpiredOnClassDate</fullName>
+        <active>true</active>
+        <description>Throw an error if the selected concession card will have expired by the date of the class 
+Note that this assumes that Class_Date &gt; null does not evaluate to TRUE in order to allow Concession Cards which do not expire</description>
+        <errorConditionFormula>DateValue(Scheduled_Class__r.Class_Date__c) &gt;  Concession_Card__r.Expiry_Date__c</errorConditionFormula>
+        <errorDisplayField>Concession_Card__c</errorDisplayField>
+        <errorMessage>The Concession Card selected expires before the date of this Scheduled Class</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ConcessionCardHasZeroValueorSessions</fullName>
+        <active>true</active>
+        <description>Throw an error if the concession card selected already been used up.  NB have to check that there is actually a Concession Card used first otherwise the null value will throw an exception</description>
+        <errorConditionFormula>Concession_Card__c  != NULL   &amp;&amp; 
+ ( Concession_Card__r.Value_Balance__c &lt;=0  || 
+   Concession_Card__r.Sessions_Balance__c &lt;=0  )</errorConditionFormula>
+        <errorDisplayField>Concession_Card__c</errorDisplayField>
+        <errorMessage>The Concession Card selected has a zero balance left on it</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ConcessionCardRateNeedsCardAttached</fullName>
+        <active>true</active>
+        <description>If value of Concession card is chosen for the price basis, then a valid concession card must be attached to the class attendance</description>
+        <errorConditionFormula>ISPICKVAL(Payment_Method__c, &quot;Concession Card&quot;) &amp;&amp;  (Concession_Card__c  = &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Concession_Card__c</errorDisplayField>
+        <errorMessage>If Price Basis is &quot;Concession Card&quot; then you must allocate a Concession card to this Class Attendance</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ConcessionCardUsedButNotConcardMethod</fullName>
+        <active>true</active>
+        <description>If a concession card is entered in the record, then the price basis must be &quot;Concession Card&quot;</description>
+        <errorConditionFormula>(Concession_Card__c != &quot;&quot;) &amp;&amp;
+NOT ISPICKVAL(Payment_Method__c, &quot;Concession Card&quot;)</errorConditionFormula>
+        <errorDisplayField>Payment_Method__c</errorDisplayField>
+        <errorMessage>If a Concession Card has been allocated to this Class Attendance, then the  Price Basis must be &quot;Concession Card&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>IfCanceledRequireCancellationDate</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL( Status__c, &quot;Canceled&quot;)  &amp;&amp; 
+ ISNULL( Cancel_Date__c )</errorConditionFormula>
+        <errorDisplayField>Cancel_Date__c</errorDisplayField>
+        <errorMessage>If Status is Canceled then you must enter a cancellation date so that late cancellation charges can be assessed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Only_Status_waitlist_on_a_proposed_class</fullName>
+        <active>true</active>
+        <errorConditionFormula>(NOT ISPICKVAL(Status__c , &quot;Waitlisted&quot;)) &amp;&amp;
+  ISPICKVAL( Scheduled_Class__r.Status__c , &quot;Proposed&quot;)</errorConditionFormula>
+        <errorDisplayField>Status__c</errorDisplayField>
+        <errorMessage>You can only use Status = &quot;Waitlisted&quot; on the booking if the Scheduled Class Status is &quot;Proposed&quot;</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Add_Class_Attendance</fullName>
+        <availability>online</availability>
+        <description>Replacement New button that pre-populates the student name into the attendance from the concession card</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Add Class Attendance</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/a0D/e?CF00N900000069rrx={!Concession_Card__c.Name}&amp;CF00N900000069qlT={!Concession_Card__c.Customer__c}&amp;00N90000004zXwe=Concession+Card&amp;retURL=%2F{!Concession_Card__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Update_Attendance_Status</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Update Attendance Status</masterLabel>
+        <openType>sidebar</openType>
+        <page>ClassAttendanceStatusUpdate</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+</CustomObject>

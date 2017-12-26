@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Sessions__c</fullName>
+    <description>Number of session that are charged for attending this class.  If cancelled with more that 1 day's notice then no charge will be applied</description>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL( Status__c , "Canceled") &amp;&amp; NOT Cancellation_Fee_Due__c, 0, Scheduled_Class__r.Class__r.Session_Count__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Actual Sessions</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

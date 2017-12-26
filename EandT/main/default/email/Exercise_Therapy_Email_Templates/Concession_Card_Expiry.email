@@ -1,0 +1,17 @@
+Dear {!Concession_Card__c.Customer_Firstname__c} <br><br>
+
+Your Pilates Concession Card is running out and may need to be renewed shortly.  <br><br>
+
+Here are the current details as at the date of this message:<br>
+Card No: {!Concession_Card__c.Name}<br>
+Sessions Remaining:  {!Concession_Card__c.Sessions_Balance__c}<br>
+Value Remaining: {!Concession_Card__c.Value_Balance__c}<br>
+Expiry Date: {!Concession_Card__c.Expiry_Date__c}<br><br>
+
+Casual classes are $15 per session. For pre-payment for 10 sessions, the concession price is $135.00, giving a 10% discount<br><br>
+
+If you would like to renew the card, then please make payment to our account at Kiwi Bank, account number XXXX-XXXXX-XXX-XX or bring payment with you to your next class<br><br>
+
+I look forward to seeing you soon<br><br>
+
+Sarah Stanley

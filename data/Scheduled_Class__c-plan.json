@@ -1,0 +1,10 @@
+[
+    {
+        "sobject": "Scheduled_Class__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "Scheduled_Class__cs.json"
+        ]
+    }
+]

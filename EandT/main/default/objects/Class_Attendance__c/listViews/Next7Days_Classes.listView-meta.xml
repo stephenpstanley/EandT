@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next7Days_Classes</fullName>
+    <columns>Class_Name__c</columns>
+    <columns>Class_Date__c</columns>
+    <columns>NAME</columns>
+    <columns>Student__c</columns>
+    <columns>Status__c</columns>
+    <columns>Cancel_Date__c</columns>
+    <columns>Payment_Method__c</columns>
+    <columns>Concession_Card__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Class_Date__c</field>
+        <operation>equals</operation>
+        <value>NEXT_N_DAYS:7</value>
+    </filters>
+    <label>Next 7 days Classes</label>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

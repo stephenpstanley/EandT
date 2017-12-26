@@ -1,0 +1,28 @@
+<!-- GotmyClassEvent -->
+<aura:event type="COMPONENT" description="Event that gets fired when the concard and class have been retrieved" >
+    
+    <!-- attributes passed in for the selected concession card -->
+    <aura:attribute name="eConCardID" type="string"/>
+    <aura:attribute name="eConCardRemainingSessions" type="integer"/>
+    <aura:attribute name="eConCardRemainingValue" type="decimal"/>
+    
+    <!-- attributes passed in for the selected Scheduled Class -->    
+    <aura:attribute name="eClassName" type="string"/>
+    <aura:attribute name="eClassDate" type="datetime"/>
+    <aura:attribute name="eClassLocation" type="string"/>
+    <aura:attribute name="eClassType" type="string"/>
+    <aura:attribute name="eClsCasualPrice" type="decimal"/>
+    <aura:attribute name="eClsConcessionPrice" type="decimal"/>
+    <aura:attribute name="eClassWaitlistLength" type="integer" />
+    
+    <!-- attributes for Class Attendance records - needed if it's a cancellation -->
+    <aura:attribute name="eClsAttendanceID" type="string"/>
+    <aura:attribute name="eClsCancelFeeDue" type="boolean" /> <!-- calculated by the APEX method -->
+    <aura:attribute name="eClsPaymentMethod" type="string"/>
+    <aura:attribute name="eClsCost" type="decimal"/>
+    <aura:attribute name="eClsSessions" type="decimal"/>
+    
+    <!-- This attribute tells if it is a booking or a cancellation request -->
+    <aura:attribute name="eTxnType" type="string" />  <!-- Booking or Cancellation -->
+    
+</aura:event>

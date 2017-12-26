@@ -1,0 +1,9 @@
+{
+    "orgName": "stephen.stanley Company",
+    "edition": "Developer",
+    "hasSampleData": "false",
+    "features" : ["PersonAccounts","Communities"],
+    "orgPreferences" : {
+        "enabled": ["S1DesktopEnabled","NetworksEnabled"]
+    }
+}

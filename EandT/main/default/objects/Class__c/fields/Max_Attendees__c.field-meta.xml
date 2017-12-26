@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Attendees__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Max size of class. Internal users can exceed this. Portal users can't add bookings if the current number of bookings >= Max_Attendees, but can waitlist.Changing this value updates future scheduled classes and causes an error if value &lt; students registered</inlineHelpText>
+    <label>Max Attendees</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

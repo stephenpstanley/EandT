@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ConcessionCardRateNeedsCardAttached</fullName>
+    <active>true</active>
+    <description>If value of Concession card is chosen for the price basis, then a valid concession card must be attached to the class attendance</description>
+    <errorConditionFormula>ISPICKVAL(Payment_Method__c, "Concession Card") &amp;&amp;  (Concession_Card__c  = "")</errorConditionFormula>
+    <errorDisplayField>Concession_Card__c</errorDisplayField>
+    <errorMessage>If Price Basis is "Concession Card" then you must allocate a Concession card to this Class Attendance</errorMessage>
+</ValidationRule>

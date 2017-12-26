@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Available_Classes</fullName>
+    <columns>Class__c</columns>
+    <columns>Class_Date__c</columns>
+    <columns>Type__c</columns>
+    <columns>Location__c</columns>
+    <columns>Open_Places__c</columns>
+    <columns>Casual_Price__c</columns>
+    <columns>Concession_Price__c</columns>
+    <columns>Register_Now__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Scheduled</value>
+    </filters>
+    <filters>
+        <field>Class_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Available Classes</label>
+</ListView>

@@ -1,0 +1,10 @@
+[
+    {
+        "sobject": "Class_Attendance__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "Class_Attendance__cs.json"
+        ]
+    }
+]

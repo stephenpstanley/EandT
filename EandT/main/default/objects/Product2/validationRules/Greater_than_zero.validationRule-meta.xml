@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Greater_than_zero</fullName>
+    <active>true</active>
+    <description>If not null, then must be > 0</description>
+    <errorConditionFormula>Maximum_Class_Size__c &lt; 1</errorConditionFormula>
+    <errorDisplayField>Maximum_Class_Size__c</errorDisplayField>
+    <errorMessage>If a number is entered for Maximum Class Size, then it must be greater than zero</errorMessage>
+</ValidationRule>

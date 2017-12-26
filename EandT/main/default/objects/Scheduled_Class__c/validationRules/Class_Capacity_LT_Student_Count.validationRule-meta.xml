@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class_Capacity_LT_Student_Count</fullName>
+    <active>true</active>
+    <description>You can't reduce the class capacity below the count of students with Status = Booked</description>
+    <errorConditionFormula>Class_Capacity__c &lt;  Student_Count__c</errorConditionFormula>
+    <errorDisplayField>Class_Capacity__c</errorDisplayField>
+    <errorMessage>There are more customers booked on a Scheduled Class than you are setting the capacity to be.  Please cancel the excess customers before reducing the class capacity</errorMessage>
+</ValidationRule>

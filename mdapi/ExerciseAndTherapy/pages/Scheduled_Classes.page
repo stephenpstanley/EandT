@@ -1,0 +1,4 @@
+<apex:page standardController="Scheduled_Class__c" tabstyle="Account">
+    <apex:enhancedlist type="Scheduled_Class__c" height="400" rowsperpage="25"/>
+     
+</apex:page>

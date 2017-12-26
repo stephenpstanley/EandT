@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_Owed__c</fullName>
+    <description>Populated whenever a Class Attendance record is created or updated by copying the value in the Actual Cost formula field where the payment type is Casual and the checkbox that shows if the class has been paid for is not set. This is to allow a roll-up summary on the Student record to show unpaid balances</description>
+    <externalId>false</externalId>
+    <label>Amount Owed</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

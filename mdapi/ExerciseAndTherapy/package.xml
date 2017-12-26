@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExerciseAndTherapy</fullName>
+    <description>Unmanaged package to pull Exercise &amp; Therapy metadata from the original DE org</description>
+    <types>
+        <members>AccExt</members>
+        <members>ClassAPEXController</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>ClassAttendanceStatusUpdate</members>
+        <members>Class_Attendances</members>
+        <members>My_Details</members>
+        <members>Scheduled_Classes</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>Class_Attendance_Trigger</members>
+        <members>Scheduled_Class_Trigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>ClassListandBook</members>
+        <members>GotmyClassEvent</members>
+        <members>SpinnerButton</members>
+        <members>SpinnerButtonStart</members>
+        <members>SpinnerButtonTest</members>
+        <members>refreshListEvent</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Class_history</members>
+        <members>Concession_Card</members>
+        <members>DSC_2023</members>
+        <members>DSC_2438</members>
+        <members>Jo_PIlates</members>
+        <members>Jo_PIlates1</members>
+        <members>Stickman_Pilates</members>
+        <members>upcoming_classes</members>
+        <name>ContentAsset</name>
+    </types>
+    <types>
+        <members>Exercise_Therapy</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Account.Billing_Contact__c</members>
+        <members>Account.Email_Copy__c</members>
+        <members>Account.Fees_owed__c</members>
+        <members>Account.Upd__c</members>
+        <members>Class_Attendance__c.Actual_Cost__c</members>
+        <members>Class_Attendance__c.Actual_Sessions__c</members>
+        <members>Class_Attendance__c.Amount_Owed__c</members>
+        <members>Class_Attendance__c.Cancel_Date__c</members>
+        <members>Class_Attendance__c.Cancellation_Fee_Due__c</members>
+        <members>Class_Attendance__c.Casual_Fee_Paid__c</members>
+        <members>Class_Attendance__c.Class_Date__c</members>
+        <members>Class_Attendance__c.Class_Name__c</members>
+        <members>Class_Attendance__c.Class_Type__c</members>
+        <members>Class_Attendance__c.Comments__c</members>
+        <members>Class_Attendance__c.Concession_Card__c</members>
+        <members>Class_Attendance__c.Fees_owed__c</members>
+        <members>Class_Attendance__c.Payment_Method__c</members>
+        <members>Class_Attendance__c.Scheduled_Class__c</members>
+        <members>Class_Attendance__c.Status__c</members>
+        <members>Class_Attendance__c.Student__c</members>
+        <members>Class_Attendance__c.Student_email_copy_hidden__c</members>
+        <members>Class_Type__c.Equipment_List__c</members>
+        <members>Class_Type__c.Type__c</members>
+        <members>Class__c.Account__c</members>
+        <members>Class__c.Casual_Price__c</members>
+        <members>Class__c.Class_Type__c</members>
+        <members>Class__c.Concession_Price__c</members>
+        <members>Class__c.Do_not_expose_to_Community__c</members>
+        <members>Class__c.Invoice_3rd_Party__c</members>
+        <members>Class__c.Location_Copy__c</members>
+        <members>Class__c.Location__c</members>
+        <members>Class__c.Max_Attendees__c</members>
+        <members>Class__c.On_Account_Price__c</members>
+        <members>Class__c.Session_Count__c</members>
+        <members>Concession_Card__c.Card_Expired__c</members>
+        <members>Concession_Card__c.Class_Type__c</members>
+        <members>Concession_Card__c.Customer_Firstname__c</members>
+        <members>Concession_Card__c.Customer__c</members>
+        <members>Concession_Card__c.Expiry_Date__c</members>
+        <members>Concession_Card__c.Expiry_Reminder_Sent__c</members>
+        <members>Concession_Card__c.Issue_Date__c</members>
+        <members>Concession_Card__c.Owner_email__c</members>
+        <members>Concession_Card__c.Sessions_Balance__c</members>
+        <members>Concession_Card__c.Sessions_Used__c</members>
+        <members>Concession_Card__c.Sessions__c</members>
+        <members>Concession_Card__c.Value_Balance__c</members>
+        <members>Concession_Card__c.Value_Used__c</members>
+        <members>Concession_Card__c.Value__c</members>
+        <members>Contact.Activity_Level__c</members>
+        <members>Contact.Current_Medications__c</members>
+        <members>Contact.Health_Issues__c</members>
+        <members>Contact.Inactive__c</members>
+        <members>Contact.Issues_Description__c</members>
+        <members>Contact.Joint_Muscle_Issues__c</members>
+        <members>Contact.Pregnant_Recently_Given_Birth__c</members>
+        <members>Contact.Prior_Surgeries__c</members>
+        <members>Contact.Sex__c</members>
+        <members>Contact.Work_Phone__c</members>
+        <members>Invoice__c.Account_Address_Copy__c</members>
+        <members>Invoice__c.Account_Billing_Contact_Copy__c</members>
+        <members>Invoice__c.Account_Name_Copy__c</members>
+        <members>Invoice__c.Account__c</members>
+        <members>Invoice__c.Due_Date__c</members>
+        <members>Invoice__c.Invoice_Contact_Phone__c</members>
+        <members>Invoice__c.Invoice_Date__c</members>
+        <members>Invoice__c.Status__c</members>
+        <members>Product2.Maximum_Class_Size__c</members>
+        <members>SDOC__SDRelationship__c.Invoice__c</members>
+        <members>Scheduled_Class__c.Casual_Price__c</members>
+        <members>Scheduled_Class__c.Class_Capacity__c</members>
+        <members>Scheduled_Class__c.Class_Date__c</members>
+        <members>Scheduled_Class__c.Class__c</members>
+        <members>Scheduled_Class__c.Concession_Price__c</members>
+        <members>Scheduled_Class__c.External_Access_permisison__c</members>
+        <members>Scheduled_Class__c.Invoice_Comments__c</members>
+        <members>Scheduled_Class__c.Invoice__c</members>
+        <members>Scheduled_Class__c.Location__c</members>
+        <members>Scheduled_Class__c.Notes__c</members>
+        <members>Scheduled_Class__c.Open_Places__c</members>
+        <members>Scheduled_Class__c.Register_Now__c</members>
+        <members>Scheduled_Class__c.Registered_Customers__c</members>
+        <members>Scheduled_Class__c.Status__c</members>
+        <members>Scheduled_Class__c.Student_Count__c</members>
+        <members>Scheduled_Class__c.Type__c</members>
+        <members>Scheduled_Class__c.Waitlist_Length__c</members>
+        <members>User.SFDC_Account_Id__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Class_Attendance__c</members>
+        <members>Class_Type__c</members>
+        <members>Class__c</members>
+        <members>Concession_Card__c</members>
+        <members>Invoice__c</members>
+        <members>Scheduled_Class__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Available_Classes</members>
+        <members>Class_Attendance__c</members>
+        <members>Class_Check_in</members>
+        <members>Class_Type__c</members>
+        <members>Class__c</members>
+        <members>Concession_Card__c</members>
+        <members>Invoice__c</members>
+        <members>My_Classes</members>
+        <members>My_Details</members>
+        <members>Scheduled_Class__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Communities_Shared_Document_Folder</members>
+        <members>Communities_Shared_Document_Folder/PilatesatCaptainslogo_png.png</members>
+        <members>Communities_Shared_Document_Folder/Stickman25pct.jpg</members>
+        <members>Communities_Shared_Document_Folder/StickmanPilates.jpg</members>
+        <name>Document</name>
+    </types>
+    <types>
+        <members>Exercise_Therapy_Email_Templates</members>
+        <members>Exercise_Therapy_Email_Templates/Concession_Card_Expiry</members>
+        <members>Exercise_Therapy_Email_Templates/Notify_Waitlisted_converted_to_Booked</members>
+        <name>EmailTemplate</name>
+    </types>
+    <types>
+        <members>Class_Attendance_Copy_Actual_Cost_to_Amount_Owed_Field-2</members>
+        <members>Class_Attendance_email_alert_when_Changed_from_Waitlisted_to_booked-1</members>
+        <members>Class_Copy_Max_Attendees_to_future_classes_if_changed-1</members>
+        <members>Copy_edited_Student_email_from_Account_record_to_any_future_Class_Attendance-1</members>
+        <members>Scheduled_Class_Populate_Class_Capacity_c_from_parent_class_if_left_blank-1</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>Classes Booked</members>
+        <name>HomePageComponent</name>
+    </types>
+    <types>
+        <members>Class_Attendance__c-Class Attendance Layout</members>
+        <members>Class_Attendance__c-Community Layout</members>
+        <members>Class_Type__c-Class Type Layout</members>
+        <members>Class__c-Class Layout</members>
+        <members>Concession_Card__c-Concession Card Layout</members>
+        <members>Invoice__c-Invoice Layout</members>
+        <members>PersonAccount-Person Account Layout</members>
+        <members>Pricebook2-Price Book Layout</members>
+        <members>Product2-Product Layout</members>
+        <members>Scheduled_Class__c-Scheduled Class Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Class_Attendance__c.All</members>
+        <members>Class_Attendance__c.Last7Days_Classes</members>
+        <members>Class_Attendance__c.My_Previous_Classes</members>
+        <members>Class_Attendance__c.My_Upcoming_Classes</members>
+        <members>Class_Attendance__c.Next7Days_Classes</members>
+        <members>Class_Attendance__c.Todays_Classes</members>
+        <members>Class_Attendance__c.Tomorrows_Classes</members>
+        <members>Class_Type__c.All</members>
+        <members>Class__c.All</members>
+        <members>Concession_Card__c.All</members>
+        <members>Invoice__c.All</members>
+        <members>Scheduled_Class__c.All</members>
+        <members>Scheduled_Class__c.Available_Classes</members>
+        <members>Scheduled_Class__c.Future_Classes_Internal_View</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>Exercise_Therapy_Developer</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>Anonymous Community User</members>
+        <members>Authenticated Community User</members>
+        <members>Custom Portal Manager</members>
+        <members>Custom%3A Marketing Profile</members>
+        <members>Custom%3A Sales Profile</members>
+        <members>Custom%3A Support Profile</members>
+        <members>Customers</members>
+        <members>Std E%26T User</members>
+        <members>Student Portal User</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>Account.Business_Account</members>
+        <members>PersonAccount.PersonAccount</members>
+        <name>RecordType</name>
+    </types>
+    <types>
+        <members>Exercise_Therapy_Reports</members>
+        <members>Exercise_Therapy_Reports/Class_Attendance_by_Contact</members>
+        <members>Exercise_Therapy_Reports/Class_Cancellation_History</members>
+        <members>Exercise_Therapy_Reports/Concession_Card_Status_by_Customer</members>
+        <members>Exercise_Therapy_Reports/Concession_Cards_and_Usage</members>
+        <name>Report</name>
+    </types>
+    <types>
+        <members>Classes_with_Scheduled_Classes_with_Class_Attendances</members>
+        <members>Concession_Cards_with_Class_Attendances</members>
+        <members>Customers_with_Concession_Cards_with_Scheduled_Classes</members>
+        <members>Customers_with_Concession_Cards_with_Scheduled_Classes_with_Class_Attendances</members>
+        <name>ReportType</name>
+    </types>
+    <types>
+        <members>Anonymous_Community_User</members>
+        <members>Student_Portal_User</members>
+        <name>SharingSet</name>
+    </types>
+    <types>
+        <members>SiteSamples</members>
+        <members>StickmanPilates</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+        <members>Class_Attendance__c.Con_card_class_type_must_match_class_typ</members>
+        <members>Class_Attendance__c.ConcessionCardExpired</members>
+        <members>Class_Attendance__c.ConcessionCardExpiredOnClassDate</members>
+        <members>Class_Attendance__c.ConcessionCardHasZeroValueorSessions</members>
+        <members>Class_Attendance__c.ConcessionCardRateNeedsCardAttached</members>
+        <members>Class_Attendance__c.ConcessionCardUsedButNotConcardMethod</members>
+        <members>Class_Attendance__c.IfCanceledRequireCancellationDate</members>
+        <members>Class_Attendance__c.Only_Status_waitlist_on_a_proposed_class</members>
+        <members>Class__c.Own_classes_must_have_max_student_count</members>
+        <members>Product2.Greater_than_zero</members>
+        <members>Scheduled_Class__c.Class_Capacity_LT_Student_Count</members>
+        <name>ValidationRule</name>
+    </types>
+    <types>
+        <members>Class_Attendance__c.Add_Class_Attendance</members>
+        <members>Class_Attendance__c.Update_Attendance_Status</members>
+        <members>Invoice__c.Generate_SDoc_Invoice_to_MSWord</members>
+        <name>WebLink</name>
+    </types>
+    <types>
+        <members>Class_Attendance__c.A_waitlisted_place_has_come_free_and_you_are_booked_on_it</members>
+        <members>Concession_Card__c.Send_email_to_Concession_card_holder_to_get_them_to_renew_it</members>
+        <name>WorkflowAlert</name>
+    </types>
+    <types>
+        <members>Account.Copy_Email_Valuie</members>
+        <members>Class__c.Copy_Location_picklist_value_to_text</members>
+        <members>Concession_Card__c.Copy_EMail_to_CCard</members>
+        <members>Concession_Card__c.Nullify_Email_sent_date</members>
+        <members>Concession_Card__c.Populate_Reminder_Sent_Date</members>
+        <members>Concession_Card__c.Populate_Reminder_Sent_Date2</members>
+        <members>Concession_Card__c.Set_CCard_Expiry_Date</members>
+        <members>Concession_Card__c.Set_Exp_Date</members>
+        <members>Concession_Card__c.Upd_false</members>
+        <members>Concession_Card__c.Update_true</members>
+        <members>User.Updated_User_Account_with_Account_Id</members>
+        <name>WorkflowFieldUpdate</name>
+    </types>
+    <types>
+        <members>Account.Copy email from person account</members>
+        <members>Account.Tsk renew CCard</members>
+        <members>Class__c.Copy Location picklist value to text</members>
+        <members>Concession_Card__c.Card close to expiring</members>
+        <members>Concession_Card__c.Copy owners email into local field</members>
+        <members>Concession_Card__c.Reset Email reminder</members>
+        <members>Concession_Card__c.Send expiry reminder email</members>
+        <members>Concession_Card__c.Set C-Card Expiry Date if Blank</members>
+        <members>User.Updated User Account with Account Id</members>
+        <name>WorkflowRule</name>
+    </types>
+    <types>
+        <members>Concession_Card__c.Concession_Card_expires_shortly</members>
+        <name>WorkflowTask</name>
+    </types>
+    <version>41.0</version>
+</Package>

@@ -1,0 +1,37 @@
+<aura:component >
+    <aura:attribute type="string" name="eventType" description="Descriptor variable used to tell the handler what the button action is"/>
+    <aura:attribute type="object" name="scheduledClassID" description="The ID of the Scheduled Class shown on the row containing the button"/>
+    <aura:attribute type="object" name="classAttendanceID" description="The ID of the ClassAttendance record shown on the row containing the button"/>
+    <aura:attribute type="string" name="variant" default="brand" 
+     description="Changes button appearance - Accepted variants include base, neutral, brand, destructive, inverse, and success"/>
+    
+    <aura:attribute name="isLoading" type="Boolean" required="true" access="public" default="false"
+                    description="If true a spinner is shown instead of the label"/>
+    <aura:attribute name="disabled" type="Boolean" required="true" access="public" default="false"
+                    description="If true the button will be disabled"/>
+    <aura:attribute name="label" type="String" required="true" access="public"
+                    description="The label of the button"/>
+    <aura:attribute name="actionLabel" type="String" required="true" access="public"
+                    description="The label that is shown when the button is in saving mode"/>
+    
+    <aura:attribute name="buttonCss" type="String" required="true" access="public" default="slds-button--neutral"
+                    description="The css that control the button"/>
+    
+    <aura:registerEvent name="startEvent" type="c:SpinnerButtonStart"/>  
+
+    
+    <lightning:button class="{!'slds-button ' + v.buttonCss}"
+            disabled="{!or(v.isLoading, v.disabled)}"
+            variant="{!v.variant}"
+            onclick="{!c.handleclick}">
+        <section class="slds-clearfix">
+            <div class="{!'slds-float--left slds-is-relative spinner-position ' + if(v.isLoading, 'slds-show', 'slds-hide')}">
+                <div class="slds-spinner slds-spinner--x-small">
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+            <div class="slds-float--right">{!if(v.isLoading, v.actionLabel, v.label)}</div>
+        </section>
+    </lightning:button>
+</aura:component>

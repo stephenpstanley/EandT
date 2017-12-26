@@ -1,0 +1,339 @@
+<aura:component controller="ClassAPEXController" implements="forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global">
+    <!-- lightning library to allow the standard Lightning dialog box compoenent to be used --> 
+    <lightning:overlayLibrary aura:id="overlayLib"/> 
+    <!-- init aura:handler action[doInit] auto call on component load -->  
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
+    
+    <!-- Register the Component Event used to signify when the fetch of best concard and selected Class has completed -->
+    <aura:registerEvent name="GotmyClassEvent" type="c:GotmyClassEvent"/>  
+    <!-- Register Component Event that should be fired when a refresh of the future class list is needed -->
+    <aura:registerEvent name="refreshListEvent" type="c:refreshListEvent"/>  
+    <aura:handler name="refreshListEvent" event="c:refreshListEvent"  action="{!c.doInit}"/> 
+    
+    
+    <!-- "ClassRecordList" attribute store the list of Attendee records. --> 
+    <aura:attribute name="ClassRecordList" type="List" />  
+    
+    <!-- attributes for the logged in student -->
+    <aura:attribute name="StudentID" type="string" default="" />
+    
+    <!-- attribute that sets the label on the booking button -->
+    <aura:attribute name="BookButtonLabel" type="string" default="Register" />    
+    <aura:attribute name="ClassID" type="string" />
+    <aura:attribute name="BookStatus" type="string" default="" />
+    
+    <!-- the next section of attributes are used inthe modal at the foot of this component markup -->
+    <!-- On receiving the event run this function -->
+    <aura:handler name="GotmyClassEvent" event="c:GotmyClassEvent"  action="{!c.popClassConfirmDialog}"/> 
+	<!-- handler for the SpinnerButton being clicked -->    
+    <aura:handler name="startEvent" event="c:SpinnerButtonStart"  action="{!c.handleSpinnerButton}"/> 
+    
+    <!-- Control attribute which control if the modal for booking confirmation is shown -->      
+    <aura:attribute name="ShowBookingdlg" type="boolean" default="false"/>  
+    <!-- Control attribute which control if the modal for confirming that a student really wants to cancel a class is shown -->      
+    <aura:attribute name="ShowCanceldlg" type="boolean" default="false"/>      
+    
+    <!-- specific attributes related to the class and student for the Class that is being booked or cancelled -->      
+    <aura:attribute name="ClassDate" type="datetime" />
+    <aura:attribute name="ClassCasualPrice"  type="decimal" />
+    <aura:attribute name="ClassConcessionPrice"  type="decimal" />
+    <aura:attribute name="ClassLocation"  type="string" />
+    <aura:attribute name="ClassType"  type="string" />
+    <aura:attribute name="ClassName" type="string" />
+    <aura:attribute name="ClassWaitlistLength" type="integer" default="0" />
+    <aura:attribute name="ClassAvailability" type="integer" default="0" />
+    
+    <!-- needed for cancellations -->
+    <aura:attribute name="ClsAttendanceID"  type="string" />
+    <aura:attribute name="ClsCancelFeeDue"  type="boolean" />
+    <aura:attribute name="ClassCancelFee" type="decimal" default="0" />
+    <aura:attribute name="ClassCancelSessions" type="decimal" default="0" />
+    <aura:attribute name="ClassCancelPaymentMethod" type="string" default="0" />
+    
+    <!-- needed for the concession card that will be applied to a booking (or refund) -->
+    <aura:attribute name="ConCardID" type="string" default="" />
+    <aura:attribute name="ConName" type="string" default="" />
+    <aura:attribute name="ConCardValue" type="decimal" default="0" />
+    <aura:attribute name="ConCardValueUsed" type="decimal" default="0" />
+    <aura:attribute name="ConCardValueBalance" type="decimal" default="0" />
+    <aura:attribute name="ConCardSessions" type="integer" default="0" />
+    <aura:attribute name="ConCardSessionsUsed" type="integer" default="0" />
+    <aura:attribute name="ConCardSessionsBalance" type="integer" default="0" />
+    <aura:attribute name="ConClassType" type="string" default="" />
+    <aura:attribute name="ConCardExpiryDate" type="date" />
+    
+    <!-- This attribute records the selected payment option if the user has to choose between card and cash in the modal -->
+    <aura:attribute name="PaymentOption" type="string" default="concard" />
+    
+    
+    <div class="slds-m-around--x-small">   
+        <div class="slds-page-header">
+            <p class="slds-page-header__title slds-truncate" title="">Future Classes</p>
+        </div>       
+        <table class="slds-table slds-table--bordered slds-table--striped slds-table--cell-buffer slds-table--fixed-layout">
+            <thead>
+                <tr class="slds-text-heading--label">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Date">Date / Time</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Class">Class</div>
+                    </th>                    
+                    <th scope="col">
+                        <div class="slds-truncate" title="Type">Type</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Location">Location</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Class Status">Class Status</div>
+                    </th>
+                    <aura:if isTrue="{!not(empty(v.StudentID))}">
+                        <th scope="col">
+                            <div class="slds-truncate" title="My Booking Status">My Booking Status</div>
+                        </th>
+                    </aura:if>
+                    <th scope="col">
+                        <div  class="slds-text-align--left"  title="Action">Action</div>
+                    </th>
+                </tr>
+            </thead>         
+            
+            <tbody>
+                <!-- Iterate all child record list in table format -->  
+                <aura:iteration items="{!v.ClassRecordList}" var="rec">
+                    <tr>
+                        <td>
+                            <ui:outputDateTime value="{!rec.ClsDate}" format="dd/MM/yyyy HH:mm"/>
+                        </td>
+                        <td>
+                            <div class="slds-truncate" title="{!rec.ClsName}">{!rec.ClsName}</div>
+                        </td>   
+                        <td>
+                            <div class="slds-truncate" title="{!rec.ClsType}">{!rec.ClsType}</div>
+                        </td>                        
+                        <td>
+                            <div class="slds-truncate" title="{!rec.ClsLocation}">{!rec.ClsLocation}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate" title="{!rec.ClsListStatus}">{!rec.ClsListStatus}</div>
+                        </td>
+                        <aura:if isTrue="{!not(empty(v.StudentID))}">
+                            <td>
+                                <div class="slds-truncate" title="{!rec.StudentStatus}">{!rec.StudentStatus}</div>
+                            </td>                        
+                        </aura:if>
+                        <td>
+                            <c:SpinnerButton variant="{!rec.variant}" label="{!rec.eventType}" 
+                                             actionLabel="{!rec.eventType}" eventType="{!rec.eventType}" 
+                                             scheduledClassID="{!rec.ClsID}" classAttendanceID="{!rec.ClsAttendanceID}"/>  
+                     </td>  
+                    </tr> 
+                </aura:iteration>
+            </tbody>         
+        </table>
+    </div>
+    
+    <!-- Use aura:if tag to display Modal Box for confimation of a new BOOKING or WAITLIST, based on the value of ShowBookingdlg boolean attribute -->   
+    <aura:if isTrue="{!v.ShowBookingdlg}">  
+        <div class="demo-only" style="height: 640px;">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+                            <!-- this is where the svg section was -->
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"> Confirm Selected Class</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <div class="slds-grid slds-grid_align-center">
+                            <tbody>
+                                <aura:if isTrue="{!v.BookStatus eq 'Waitlisted'}">
+                                    <tr>
+                                        <td>
+                                            <div class="slds-truncate slds-float--left">If a place becomes free you will automatically be booked on this class and notified by email</div>
+                                            <p>&nbsp;</p> 
+                                            <div class="slds-truncate slds-float--left">If you join the waitlist your place in the queue will be: <strong>{!v.ClassWaitlistLength + 1}</strong></div>
+                                        </td>
+                                    </tr>
+                                    <p>&nbsp;</p>                                  
+                                    <tr>
+                                        <td>
+                                            <div class="slds-truncate slds-float--left"><strong> Request to be waitlisted for:</strong></div>
+                                        </td>
+                                    </tr>                                
+                                </aura:if>
+                                <tr>
+                                    <td>
+                                        <div class="slds-truncate slds-float--left" title="ClassName">{!'Class:    ' + v.ClassName}</div>
+                                    </td> 
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span> Date: </span>
+                                        <ui:outputDateTime value="{!v.ClassDate}" format="dd/MM/yyyy"/> 
+                                        <span> at </span>
+                                        <ui:outputDateTime value="{!v.ClassDate}" format="HH:mm"/>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="slds-truncate slds-float--left" title="Location">{!'Location:    ' + v.ClassLocation}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="slds-truncate slds-float--left" title="ClassType">{!'Class Type:    ' + v.ClassType}</div>
+                                    </td>
+                                </tr>    
+                            </tbody>
+                        </div>
+                        <!-- IsTrue Section displayed only if the user does not have a valid concession card for this class -->
+                        <!-- The else section handles if they have a concession card -->
+                        <aura:if isTrue="{!v.ConCardID eq ''}">
+                            <tbody>                                                      
+                                <tr>
+                                    <div><strong>{!' The fee for this class is $' + v.ClassCasualPrice + ' payable on attendance'}</strong></div>
+                                    <br/>
+                                </tr>
+                            </tbody>    
+                            <aura:set attribute="else">
+                                <br/><br/> 
+                                <fieldset class="slds-form-element">
+                                    <aura:if isTrue="{!v.BookStatus eq 'Waitlisted'}">
+                                        <legend class="slds-form-element__legend slds-form-element__label">Please select your preferred payment option to use if a place becomes available:</legend>
+                                        <aura:set attribute="else">
+                                            <legend class="slds-form-element__legend slds-form-element__label">Please confirm your selected payment option</legend>
+                                        </aura:set>
+                                    </aura:if>
+                                    <div class="slds-form-element__control">
+                                        <span class="slds-radio">
+                                            <input type="radio" id="r1" name="options" value="concard" onchange="{!c.onBookingRadio}" checked="true" />
+                                            <label class="slds-radio__label" for="r1">
+                                                <span class="slds-radio_faux"></span>
+                                                <span class="slds-form-element__label">{!' Use Concession card with '+ v.ConCardSessionsBalance + ' sessions left on it'}</span>
+                                            </label>
+                                        </span>
+                                        <span class="slds-radio">
+                                            <input type="radio" id="r2" name="options" onchange="{!c.onBookingRadio}" value="casual" />
+                                            <label class="slds-radio__label" for="r2">
+                                                <span class="slds-radio_faux"></span>
+                                                <span class="slds-form-element__label">{!' Pay $' + v.ClassCasualPrice + ' on attendance'}</span>
+                                            </label>
+                                        </span>
+                                    </div>
+                                </fieldset>
+                            </aura:set>
+                        </aura:if>    
+                        
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <div> Note: Cancelling or failing to attend a <strong>booked</strong> class with less than 24 hours notice will incur the full class fee</div><br/>
+                        <aura:if isTrue="{!v.BookStatus eq 'Waitlisted'}">
+                            <div><strong>Cancelling a Waitlisted place will NOT incur cancellation charges</strong></div>
+                            <lightning:button label="Don't Waitlist me" onclick="{!c.onBookingCancel}" />
+                            <lightning:button variant="brand" label="Confirm Waitlist Request" onclick="{!c.onBookingConfirm}" />
+                            <aura:set attribute="else">
+                                <lightning:button label="Don't Book me" onclick="{!c.onBookingCancel}" />
+                                <lightning:button variant="brand" label="Confirm Booking" onclick="{!c.onBookingConfirm}" />
+                            </aura:set>
+                        </aura:if> 
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </aura:if>
+    
+    
+    <!-- Use aura:if tag to display Modal Box for cancellation of a confirmed booking, based on the value of ShowCanceldlg boolean attribute -->   
+    <aura:if isTrue="{!v.ShowCanceldlg}">  
+        <div class="demo-only" style="height: 640px;">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"> Confirm Selected Class to cancel</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <div class="slds-grid slds-grid_align-center">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="slds-truncate slds-float--left" title="ClassName">{!'Class:    ' + v.ClassName}</div>
+                                    </td> 
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span> Date: </span>
+                                        <ui:outputDateTime value="{!v.ClassDate}" format="dd/MM/yyyy"/> 
+                                        <span> at </span>
+                                        <ui:outputDateTime value="{!v.ClassDate}" format="HH:mm"/>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="slds-truncate slds-float--left" title="Location">{!'Location:    ' + v.ClassLocation}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="slds-truncate slds-float--left" title="ClassType">{!'Class Type:    ' + v.ClassType}</div>
+                                    </td>
+                                </tr>    
+                            </tbody>
+                        </div>
+                        <!-- IsTrue Section displayed only if the user does not have a valid concession card for this class -->
+                        <!-- The else section handles if they have a concession card -->
+                        <aura:if isTrue="{!v.ClsCancelFeeDue}">
+                            <tbody>                                                      
+                                <tr>
+                                    <br/>
+                                    <div><strong>Because you are cancelling on the same day as the class, a cancellation fee is due</strong></div>
+                                    <br/>
+                                </tr>
+                            </tbody>                             
+                            <aura:if isTrue="{!(v.ClassCancelPaymentMethod eq 'Casual')}">
+                                <tbody>                                                      
+                                    <tr>
+                                        <div><strong>{!'As you booked to pay on a casual basis, the cancellation fee due is  $' + v.ClassCancelFee}</strong></div>
+                                        <br/>
+                                    </tr>
+                                </tbody>    
+                                <aura:set attribute="else">
+                                    <tbody>                                                      
+                                        <tr>
+                                            <div><strong>{!'As you booked this class with your concession card ' + v.ClassCancelSessions + ' session ( value $' + v.ClassCancelFee + ' ) will be deducted from the card used'}</strong></div>
+                                            <br/>
+                                        </tr>
+                                    </tbody> 
+                                </aura:set>
+                            </aura:if>    
+                            <aura:set attribute="else"> 
+                                <tbody>                                                      
+                                    <tr>
+                                        <br/><div>As you are giving the required cancellation notice, no cancellation fee is due</div>
+                                        <br/>
+                                    </tr>
+                                </tbody>
+                            </aura:set>   
+                        </aura:if>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <div>Please confirm if you still want to cancel this booking</div>
+                        <lightning:button label="Don't Cancel my Booking" onclick="{!c.onCancelCancel}" />
+                        <lightning:button variant="brand" label="Confirm Cancellation Request" onclick="{!c.onCancelConfirm}" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </aura:if>
+    
+</aura:component>

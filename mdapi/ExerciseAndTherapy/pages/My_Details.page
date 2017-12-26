@@ -1,0 +1,26 @@
+<apex:page controller="AccExt">
+    
+    <apex:form >
+        <apex:pageBlock title="Edit {!$User.FirstName}'s details with  {!$User.ContactId} as ID">
+            <apex:pageMessages />
+          <!--   <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}"/>
+            </apex:pageBlockButtons> -->
+            <apex:pageBlockSection >
+                <!--  <apex:inputField value="{!acct.name}"/>-->
+                <apex:inputField value="{!acct.PersonBirthdate}"/>                
+                <apex:inputField value="{!acct.PersonEmail}"/>
+                <apex:inputField value="{!acct.Sex__pc}"/>
+                <apex:inputField value="{!acct.PersonMobilePhone}"/>
+                <apex:inputField value="{!acct.PersonHomePhone}"/>
+                <apex:inputField value="{!acct.Work_Phone__pc}"/>
+                <apex:inputField value="{!acct.Fax}"/>
+                <apex:inputField value="{!acct.BillingStreet}"/>
+                <apex:inputField value="{!acct.BillingCity}"/>
+                <apex:inputField value="{!acct.BillingState}"/>
+                <apex:inputField value="{!acct.BillingPostalCode}"/>
+                <apex:inputField value="{!acct.BillingCountry}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

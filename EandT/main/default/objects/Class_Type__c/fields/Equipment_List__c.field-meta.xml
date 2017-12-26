@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Equipment_List__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Select all the types of equipment that might be used in this type of class. The items selected will be shown as a picklist when you schedule the class to help you record what equipment you plan to use or actually used.</inlineHelpText>
+    <label>Equipment List</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Mats (High Quality)</fullName>
+                <default>false</default>
+                <label>Mats (High Quality)</label>
+            </value>
+            <value>
+                <fullName>Mats (Lower Quality)</fullName>
+                <default>false</default>
+                <label>Mats (Lower Quality)</label>
+            </value>
+            <value>
+                <fullName>Arc</fullName>
+                <default>false</default>
+                <label>Arc</label>
+            </value>
+            <value>
+                <fullName>Chair</fullName>
+                <default>false</default>
+                <label>Chair</label>
+            </value>
+            <value>
+                <fullName>Reformer</fullName>
+                <default>false</default>
+                <label>Reformer</label>
+            </value>
+            <value>
+                <fullName>Tower</fullName>
+                <default>false</default>
+                <label>Tower</label>
+            </value>
+            <value>
+                <fullName>Theraband</fullName>
+                <default>false</default>
+                <label>Theraband</label>
+            </value>
+            <value>
+                <fullName>Ball - Swiss</fullName>
+                <default>false</default>
+                <label>Ball - Swiss</label>
+            </value>
+            <value>
+                <fullName>Ball - Small</fullName>
+                <default>false</default>
+                <label>Ball - Small</label>
+            </value>
+            <value>
+                <fullName>Ball - Triad</fullName>
+                <default>false</default>
+                <label>Ball - Triad</label>
+            </value>
+            <value>
+                <fullName>Hand Weights</fullName>
+                <default>false</default>
+                <label>Hand Weights</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

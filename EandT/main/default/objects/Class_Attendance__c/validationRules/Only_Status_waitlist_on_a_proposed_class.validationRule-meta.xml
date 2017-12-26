@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_Status_waitlist_on_a_proposed_class</fullName>
+    <active>true</active>
+    <errorConditionFormula>(NOT ISPICKVAL(Status__c , "Waitlisted")) &amp;&amp;
+  ISPICKVAL( Scheduled_Class__r.Status__c , "Proposed")</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>You can only use Status = "Waitlisted" on the booking if the Scheduled Class Status is "Proposed"</errorMessage>
+</ValidationRule>

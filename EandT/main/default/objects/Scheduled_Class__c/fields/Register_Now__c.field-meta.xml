@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Register_Now__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (  Open_Places__c >0 ,IF  (DATEVALUE( Class_Date__c ) &lt;> TODAY(),
+ HYPERLINK("/pilates/a0D/e?&amp;CF00N900000069qlT="&amp;$User.FirstName+" "+$User.LastName&amp;"&amp;CF00N900000069qlT_lkid="&amp;$User.SFDC_Account_Id__c&amp;"&amp;CF00N90000004zXhY_lkid="&amp;Id&amp;"&amp;CF00N90000004zXhY="&amp;Name&amp;"&amp;saveURL=%2F"&amp;Id&amp;"&amp;retURL=/pilates/a0B","Register Now"), "Class is today, phone us to book"), 
+"Full")</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Register Now</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

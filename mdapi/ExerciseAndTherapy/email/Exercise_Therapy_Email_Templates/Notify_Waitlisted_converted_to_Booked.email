@@ -1,0 +1,9 @@
+Your Waitlist entry has been converted to a confirmed booking.</br>
+</br>
+Details: </br>
+Date/Time {!Scheduled_Class__c.Class_Date__c}  </br>
+Class: {!Scheduled_Class__c.Class__c} </br>
+Location: {!Scheduled_Class__c.Location__c} </br>
+</br>
+Looking forward to seeing you in class</br>
+</br>

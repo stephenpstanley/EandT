@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issues_Description__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>List any issues not covered by pick lists that need more detail. Include any otehr conditions affected by exercise, prior surgeries or injuries, medications, recent pregnancies</inlineHelpText>
+    <label>Issues Description</label>
+    <length>2000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

@@ -1,0 +1,33 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Class_Type__c",
+                "referenceId": "Class_Type__cRef1"
+            },
+            "IsDeleted": false,
+            "Name": "Mat",
+            "Type__c": "Group Class"
+        },
+        {
+            "attributes": {
+                "type": "Class_Type__c",
+                "referenceId": "Class_Type__cRef2"
+            },
+            "Equipment_List__c": "Reformer;Tower",
+            "IsDeleted": false,
+            "Name": "Private",
+            "Type__c": "Private"
+        },
+        {
+            "attributes": {
+                "type": "Class_Type__c",
+                "referenceId": "Class_Type__cRef3"
+            },
+            "Equipment_List__c": "Reformer;Tower",
+            "IsDeleted": false,
+            "Name": "Semi-Private",
+            "Type__c": "Semi-Private"
+        }
+    ]
+}

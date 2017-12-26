@@ -1,0 +1,8 @@
+<aura:event type="COMPONENT" description="Activation event for Button" >
+    <aura:attribute type="object" name="scheduledClassID" />
+    <aura:attribute type="object" name="classAttendanceID" />
+    <!-- this attribute used to allow the handler know what to do when it's fired -->
+    <aura:attribute type="string" name="eventType" /> 
+    <!-- this attribute sets the button style -->
+    <aura:attribute type="string" name="variant" />
+</aura:event>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>A collection of common properties as some minimum common attributes.  i.e. an in-house may class would be a different class type from a mat class delivered on behalf of an external organisation.  An in-house private equipment class would be another</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <fields>
+        <fullName>Equipment_List__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select all the types of equipment that might be used in this type of class. The items selected will be shown as a picklist when you schedule the class to help you record what equipment you plan to use or actually used.</inlineHelpText>
+        <label>Equipment List</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Mats (High Quality)</fullName>
+                    <default>false</default>
+                    <label>Mats (High Quality)</label>
+                </value>
+                <value>
+                    <fullName>Mats (Lower Quality)</fullName>
+                    <default>false</default>
+                    <label>Mats (Lower Quality)</label>
+                </value>
+                <value>
+                    <fullName>Arc</fullName>
+                    <default>false</default>
+                    <label>Arc</label>
+                </value>
+                <value>
+                    <fullName>Chair</fullName>
+                    <default>false</default>
+                    <label>Chair</label>
+                </value>
+                <value>
+                    <fullName>Reformer</fullName>
+                    <default>false</default>
+                    <label>Reformer</label>
+                </value>
+                <value>
+                    <fullName>Tower</fullName>
+                    <default>false</default>
+                    <label>Tower</label>
+                </value>
+                <value>
+                    <fullName>Theraband</fullName>
+                    <default>false</default>
+                    <label>Theraband</label>
+                </value>
+                <value>
+                    <fullName>Ball - Swiss</fullName>
+                    <default>false</default>
+                    <label>Ball - Swiss</label>
+                </value>
+                <value>
+                    <fullName>Ball - Small</fullName>
+                    <default>false</default>
+                    <label>Ball - Small</label>
+                </value>
+                <value>
+                    <fullName>Ball - Triad</fullName>
+                    <default>false</default>
+                    <label>Ball - Triad</label>
+                </value>
+                <value>
+                    <fullName>Hand Weights</fullName>
+                    <default>false</default>
+                    <label>Hand Weights</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Group Class</fullName>
+                    <default>false</default>
+                    <label>Group Class</label>
+                </value>
+                <value>
+                    <fullName>Semi-Private</fullName>
+                    <default>false</default>
+                    <label>Semi-Private</label>
+                </value>
+                <value>
+                    <fullName>Private</fullName>
+                    <default>false</default>
+                    <label>Private</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Class Type</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Class Type Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Class Types</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Equipment_List__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Equipment_List__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Equipment_List__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Equipment_List__c</searchFilterFields>
+        <searchFilterFields>Type__c</searchFilterFields>
+        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Equipment_List__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

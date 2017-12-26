@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fees_owed__c</fullName>
+    <description>Rollup summary - Sum of Class Attendance fees owed for previous classes where the Fees Paid checkbox hasn't been set</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Sum of Class Attendance fees owed for previous classes where the Fees Paid checkbox hasn't been set</inlineHelpText>
+    <label>Fees owed</label>
+    <summarizedField>Class_Attendance__c.Amount_Owed__c</summarizedField>
+    <summaryFilterItems>
+        <field>Class_Attendance__c.Casual_Fee_Paid__c</field>
+        <operation>notEqual</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Class_Attendance__c.Payment_Method__c</field>
+        <operation>equals</operation>
+        <value>Casual</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Class_Attendance__c.Student__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location__c</fullName>
+    <externalId>false</externalId>
+    <label>Location</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Captain's Retreat</fullName>
+                <default>false</default>
+                <label>Captain's Retreat</label>
+            </value>
+            <value>
+                <fullName>Pt Chev Tennis Club</fullName>
+                <default>false</default>
+                <label>Pt Chev Tennis Club</label>
+            </value>
+            <value>
+                <fullName>Mt Albert Bowling Club</fullName>
+                <default>false</default>
+                <label>Mt Albert Bowling Club</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

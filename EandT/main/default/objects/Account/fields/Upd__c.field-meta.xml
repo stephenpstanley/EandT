@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upd__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Hidden field used by workflow rule to detect an update being made. Work flow rules set this field to true then sets it back to false
+
+Rules that need to take action do so when set to true before being set back to false</description>
+    <externalId>false</externalId>
+    <label>Upd Trigger</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

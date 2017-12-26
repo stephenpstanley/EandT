@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ConcessionCardHasZeroValueorSessions</fullName>
+    <active>true</active>
+    <description>Throw an error if the concession card selected already been used up.  NB have to check that there is actually a Concession Card used first otherwise the null value will throw an exception</description>
+    <errorConditionFormula>Concession_Card__c  != NULL   &amp;&amp; 
+ ( Concession_Card__r.Value_Balance__c &lt;=0  || 
+   Concession_Card__r.Sessions_Balance__c &lt;=0  )</errorConditionFormula>
+    <errorDisplayField>Concession_Card__c</errorDisplayField>
+    <errorMessage>The Concession Card selected has a zero balance left on it</errorMessage>
+</ValidationRule>

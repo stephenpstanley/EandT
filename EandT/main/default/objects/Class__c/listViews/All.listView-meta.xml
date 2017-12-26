@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Class_Type__c</columns>
+    <columns>Location__c</columns>
+    <columns>Invoice_3rd_Party__c</columns>
+    <columns>Max_Attendees__c</columns>
+    <columns>On_Account_Price__c</columns>
+    <columns>Casual_Price__c</columns>
+    <columns>Concession_Price__c</columns>
+    <columns>Session_Count__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <sharedTo>
+        <allInternalUsers/>
+        <group>Internal_Users</group>
+    </sharedTo>
+</ListView>

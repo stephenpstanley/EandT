@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is where you define the classes that you will give.  It include information like location, max number of attendees (You can exceed this but should be warned) the usual frequency (used for scheduling future classes) and if it runs on public holidays (used in scheduling)</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>If this class is billed to a third party regardless of number of attendees, then select the account here</inlineHelpText>
+        <label>Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Business Account</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Classes</relationshipLabel>
+        <relationshipName>Classes</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Casual_Price__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the normal price for an attendee who &quot;pays as they go&quot;</inlineHelpText>
+        <label>Casual Price</label>
+        <precision>5</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Class_Type__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Class Type</label>
+        <referenceTo>Class_Type__c</referenceTo>
+        <relationshipLabel>Classes</relationshipLabel>
+        <relationshipName>Classes</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Concession_Price__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The price for this class when a concession (pre-pay) card is used to pay for it.  It defaults to a 10% discount from the casual price</inlineHelpText>
+        <label>Concession Price</label>
+        <precision>5</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Do_not_expose_to_Community__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, then: Anonymous users will not see the class listed on the Community and authenticated users will only see it on the community if they have ever had a booking of any status for that Class</inlineHelpText>
+        <label>Do not expose to Community</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_3rd_Party__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set to true if this class is being done on behalf of a third party</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If this class is being done on behalf of a third party and you are invoicing the third party.  If this box is checked, students can&apos;t book in the class through the community / student portal.</inlineHelpText>
+        <label>Invoice 3rd Party</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Location_Copy__c</fullName>
+        <description>Read-only field used to copy the value of the location picklist so it can be displayed on the child Class Attendace records.  Populated by a workflow rule</description>
+        <externalId>false</externalId>
+        <label>Location Copy</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Captain&apos;s Retreat</fullName>
+                    <default>false</default>
+                    <label>Captain&apos;s Retreat</label>
+                </value>
+                <value>
+                    <fullName>Pt Chev Tennis Club</fullName>
+                    <default>false</default>
+                    <label>Pt Chev Tennis Club</label>
+                </value>
+                <value>
+                    <fullName>Mt Albert Bowling Club</fullName>
+                    <default>false</default>
+                    <label>Mt Albert Bowling Club</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Max_Attendees__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Max size of class. Internal users can exceed this. Portal users can&apos;t add bookings if the current number of bookings &gt;= Max_Attendees, but can waitlist.Changing this value updates future scheduled classes and causes an error if value &lt; students registered</inlineHelpText>
+        <label>Max Attendees</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>On_Account_Price__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The price charged if this Class is paid for in arrears</inlineHelpText>
+        <label>On Account Price</label>
+        <precision>5</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Session_Count__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of Concession Card session that it costs to attend this class</inlineHelpText>
+        <label>Session Count</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Class</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Class_Type__c</columns>
+        <columns>Location__c</columns>
+        <columns>Invoice_3rd_Party__c</columns>
+        <columns>Max_Attendees__c</columns>
+        <columns>On_Account_Price__c</columns>
+        <columns>Casual_Price__c</columns>
+        <columns>Concession_Price__c</columns>
+        <columns>Session_Count__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+            <group>Internal_Users</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Class Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Classes</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Class_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Location__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Casual_Price__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Concession_Price__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>On_Account_Price__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Session_Count__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Class_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Location__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Casual_Price__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Concession_Price__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>On_Account_Price__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Session_Count__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Class_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Location__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Casual_Price__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Concession_Price__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>On_Account_Price__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Session_Count__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>OBJECT_ID</searchFilterFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account__c</searchFilterFields>
+        <searchFilterFields>Casual_Price__c</searchFilterFields>
+        <searchFilterFields>Class_Type__c</searchFilterFields>
+        <searchFilterFields>Concession_Price__c</searchFilterFields>
+        <searchFilterFields>Location__c</searchFilterFields>
+        <searchFilterFields>On_Account_Price__c</searchFilterFields>
+        <searchFilterFields>Session_Count__c</searchFilterFields>
+        <searchResultsAdditionalFields>Class_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Location__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Casual_Price__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Concession_Price__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>On_Account_Price__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Session_Count__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Own_classes_must_have_max_student_count</fullName>
+        <active>true</active>
+        <description>If bookings for the class are being done by a third party, then the class won;t be exposed on the community and thus doesn&apos;t need to handle online bookings.  Otherwise max student count is required and can&apos;t be less than 1</description>
+        <errorConditionFormula>(NOT Invoice_3rd_Party__c &amp;&amp; 
+      (Max_Attendees__c &lt; 1 || ISBLANK(Max_Attendees__c))) ||
+(Invoice_3rd_Party__c  &amp;&amp; (Max_Attendees__c &lt; 1))</errorConditionFormula>
+        <errorDisplayField>Max_Attendees__c</errorDisplayField>
+        <errorMessage>If the class is self-managed (i.e. not a class being taught for a third party) then a  maximum number of students on the class must be specified to allow online bookings.  This value must be greater than zero</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

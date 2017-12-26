@@ -1,0 +1,15 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Invoice__c",
+                "referenceId": "Invoice__cRef1"
+            },
+            "Due_Date__c": "2013-05-30",
+            "Invoice_Date__c": "2013-04-30",
+            "IsDeleted": false,
+            "Name": "INV-00001",
+            "Status__c": "Draft"
+        }
+    ]
+}

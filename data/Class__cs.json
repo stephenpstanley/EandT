@@ -1,0 +1,163 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Class__c",
+                "referenceId": "Class__cRef1"
+            },
+            "Casual_Price__c": 60,
+            "Concession_Price__c": 60,
+            "Do_not_expose_to_Community__c": false,
+            "Invoice_3rd_Party__c": true,
+            "IsDeleted": false,
+            "Location_Copy__c": "Mt Albert Bowling Club",
+            "Location__c": "Mt Albert Bowling Club",
+            "Name": "1 Hour - SemiPrivate",
+            "On_Account_Price__c": 60
+        },
+        {
+            "attributes": {
+                "type": "Class__c",
+                "referenceId": "Class__cRef2"
+            },
+            "Casual_Price__c": 54,
+            "Concession_Price__c": 50,
+            "Do_not_expose_to_Community__c": false,
+            "Invoice_3rd_Party__c": false,
+            "IsDeleted": false,
+            "Location_Copy__c": "Captain's Retreat",
+            "Location__c": "Captain's Retreat",
+            "Max_Attendees__c": 1,
+            "Name": "60 Mins Private - Captain's Retreat",
+            "On_Account_Price__c": 50
+        },
+        {
+            "attributes": {
+                "type": "Class__c",
+                "referenceId": "Class__cRef3"
+            },
+            "Casual_Price__c": 27,
+            "Concession_Price__c": 25,
+            "Do_not_expose_to_Community__c": false,
+            "Invoice_3rd_Party__c": false,
+            "IsDeleted": false,
+            "Location_Copy__c": "Captain's Retreat",
+            "Location__c": "Captain's Retreat",
+            "Max_Attendees__c": 1,
+            "Name": "30 Mins Private - Captain's Retreat",
+            "On_Account_Price__c": 27
+        },
+        {
+            "attributes": {
+                "type": "Class__c",
+                "referenceId": "Class__cRef4"
+            },
+            "Casual_Price__c": 60,
+            "Concession_Price__c": 54,
+            "Do_not_expose_to_Community__c": true,
+            "Invoice_3rd_Party__c": false,
+            "IsDeleted": false,
+            "Location_Copy__c": "Mt Albert Bowling Club",
+            "Location__c": "Mt Albert Bowling Club",
+            "Max_Attendees__c": 1,
+            "Name": "1 Hour - In Balance - Private",
+            "On_Account_Price__c": 60
+        },
+        {
+            "attributes": {
+                "type": "Class__c",
+                "referenceId": "Class__cRef5"
+            },
+            "Casual_Price__c": 15,
+            "Concession_Price__c": 13.5,
+            "Do_not_expose_to_Community__c": false,
+            "Invoice_3rd_Party__c": false,
+            "IsDeleted": false,
+            "Location_Copy__c": "Captain's Retreat",
+            "Location__c": "Captain's Retreat",
+            "Max_Attendees__c": 5,
+            "Name": "Mat Class - Captain's Retreat",
+            "On_Account_Price__c": 15
+        },
+        {
+            "attributes": {
+                "type": "Class__c",
+                "referenceId": "Class__cRef6"
+            },
+            "Casual_Price__c": 15,
+            "Concession_Price__c": 13.5,
+            "Do_not_expose_to_Community__c": false,
+            "Invoice_3rd_Party__c": false,
+            "IsDeleted": false,
+            "Location_Copy__c": "Pt Chev Tennis Club",
+            "Location__c": "Pt Chev Tennis Club",
+            "Max_Attendees__c": 12,
+            "Name": "Mat - Pt Chev Tennis Club",
+            "On_Account_Price__c": 15
+        },
+        {
+            "attributes": {
+                "type": "Class__c",
+                "referenceId": "Class__cRef7"
+            },
+            "Casual_Price__c": 15,
+            "Concession_Price__c": 13.5,
+            "Do_not_expose_to_Community__c": false,
+            "Invoice_3rd_Party__c": false,
+            "IsDeleted": false,
+            "Location_Copy__c": "Captain's Retreat",
+            "Location__c": "Captain's Retreat",
+            "Max_Attendees__c": 7,
+            "Name": "Mat at Captains Retreat",
+            "On_Account_Price__c": 15
+        },
+        {
+            "attributes": {
+                "type": "Class__c",
+                "referenceId": "Class__cRef8"
+            },
+            "Casual_Price__c": 15,
+            "Concession_Price__c": 13.5,
+            "Do_not_expose_to_Community__c": true,
+            "Invoice_3rd_Party__c": false,
+            "IsDeleted": false,
+            "Location_Copy__c": "Captain's Retreat",
+            "Location__c": "Captain's Retreat",
+            "Max_Attendees__c": 5,
+            "Name": "Private Mat Class - Captain's Retreat",
+            "On_Account_Price__c": 15
+        },
+        {
+            "attributes": {
+                "type": "Class__c",
+                "referenceId": "Class__cRef9"
+            },
+            "Casual_Price__c": 45,
+            "Concession_Price__c": 35,
+            "Do_not_expose_to_Community__c": true,
+            "Invoice_3rd_Party__c": false,
+            "IsDeleted": false,
+            "Location_Copy__c": "Captain's Retreat",
+            "Location__c": "Captain's Retreat",
+            "Max_Attendees__c": 6,
+            "Name": "Not to be exposed class unless booked on it",
+            "On_Account_Price__c": 25
+        },
+        {
+            "attributes": {
+                "type": "Class__c",
+                "referenceId": "Class__cRef10"
+            },
+            "Casual_Price__c": 15,
+            "Concession_Price__c": 13.5,
+            "Do_not_expose_to_Community__c": false,
+            "Invoice_3rd_Party__c": false,
+            "IsDeleted": false,
+            "Location_Copy__c": "Captain's Retreat",
+            "Location__c": "Captain's Retreat",
+            "Max_Attendees__c": 3,
+            "Name": "Stephen's waitlist",
+            "On_Account_Price__c": 13.5
+        }
+    ]
+}

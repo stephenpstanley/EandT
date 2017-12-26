@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_3rd_Party__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Set to true if this class is being done on behalf of a third party</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If this class is being done on behalf of a third party and you are invoicing the third party.  If this box is checked, students can't book in the class through the community / student portal.</inlineHelpText>
+    <label>Invoice 3rd Party</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

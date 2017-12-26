@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Own_classes_must_have_max_student_count</fullName>
+    <active>true</active>
+    <description>If bookings for the class are being done by a third party, then the class won;t be exposed on the community and thus doesn't need to handle online bookings.  Otherwise max student count is required and can't be less than 1</description>
+    <errorConditionFormula>(NOT Invoice_3rd_Party__c &amp;&amp; 
+      (Max_Attendees__c &lt; 1 || ISBLANK(Max_Attendees__c))) ||
+(Invoice_3rd_Party__c  &amp;&amp; (Max_Attendees__c &lt; 1))</errorConditionFormula>
+    <errorDisplayField>Max_Attendees__c</errorDisplayField>
+    <errorMessage>If the class is self-managed (i.e. not a class being taught for a third party) then a  maximum number of students on the class must be specified to allow online bookings.  This value must be greater than zero</errorMessage>
+</ValidationRule>

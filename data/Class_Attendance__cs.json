@@ -1,0 +1,824 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef1"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-12-11",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-000074",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef2"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-000072",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef3"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "000011",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef4"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 30,
+            "IsDeleted": false,
+            "Name": "CA-000044",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef5"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-000036",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef6"
+            },
+            "Cancel_Date__c": "2013-11-19",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 15,
+            "IsDeleted": false,
+            "Name": "CA-000081",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef7"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 45,
+            "IsDeleted": false,
+            "Name": "000003",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Attended"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef8"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-12-13",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-000080",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef9"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "000004",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Attended"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef10"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 45,
+            "IsDeleted": false,
+            "Name": "000008",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef11"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "000006",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Attended"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef12"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 45,
+            "IsDeleted": false,
+            "Name": "000005",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Attended"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef13"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-000077",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef14"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 30,
+            "IsDeleted": false,
+            "Name": "CA-000087",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef15"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 15,
+            "IsDeleted": false,
+            "Name": "CA-000089",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef16"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 45,
+            "IsDeleted": false,
+            "Name": "CA-000088",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef17"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 30,
+            "IsDeleted": false,
+            "Name": "CA-000086",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef18"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": true,
+            "Fees_owed__c": 0,
+            "IsDeleted": false,
+            "Name": "CA-002695",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef19"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": true,
+            "Fees_owed__c": 0,
+            "IsDeleted": false,
+            "Name": "CA-002704",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef20"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002727",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Waitlisted"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef21"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-11-28",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002754",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef22"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-11-28",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002756",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef23"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-11-28",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002759",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef24"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-11-28",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002755",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef25"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002760",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef26"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002762",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef27"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-12-11",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002766",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Waitlist - Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef28"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-12-13",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002768",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Waitlist - Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef29"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002770",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Waitlisted"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef30"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-12-13",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002776",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef31"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-12-13",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002777",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Waitlist - Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef32"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-12-13",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002769",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Waitlist - Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef33"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002771",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef34"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002772",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef35"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-12-13",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002774",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef36"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-12-13",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002775",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef37"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002752",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef38"
+            },
+            "Amount_Owed__c": 15,
+            "Cancel_Date__c": "2017-11-29",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002748",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef39"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-11-28",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002757",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef40"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-11-28",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002758",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef41"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-12-05",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002764",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef42"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-12-13",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002773",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef43"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002787",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked",
+            "Student_email_copy_hidden__c": "stephenpstanley@hotmail.com"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef44"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 45,
+            "IsDeleted": false,
+            "Name": "CA-002782",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef45"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 30,
+            "IsDeleted": false,
+            "Name": "CA-002785",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef46"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": true,
+            "Fees_owed__c": 0,
+            "IsDeleted": false,
+            "Name": "CA-002692",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef47"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002690",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef48"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": true,
+            "Fees_owed__c": 15,
+            "IsDeleted": false,
+            "Name": "CA-002696",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef49"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": true,
+            "Fees_owed__c": 30,
+            "IsDeleted": false,
+            "Name": "CA-002699",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef50"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": true,
+            "Fees_owed__c": 45,
+            "IsDeleted": false,
+            "Name": "CA-002705",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef51"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-12-05",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002763",
+            "Payment_Method__c": "Concession Card",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef52"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-12-13",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002765",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Canceled"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef53"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002788",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked",
+            "Student_email_copy_hidden__c": "stephen.stanley@salesforce.com"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef54"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 15,
+            "IsDeleted": false,
+            "Name": "CA-002779",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Waitlisted"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef55"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 45,
+            "IsDeleted": false,
+            "Name": "CA-002778",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Waitlisted"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef56"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002784",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef57"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 15,
+            "IsDeleted": false,
+            "Name": "CA-002786",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef58"
+            },
+            "Amount_Owed__c": 0,
+            "Cancel_Date__c": "2017-12-26",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002783",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Canceled",
+            "Student_email_copy_hidden__c": "stephen.stanley@salesforce.com"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef59"
+            },
+            "Amount_Owed__c": 15,
+            "Cancel_Date__c": "2017-12-26",
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002803",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Waitlist - Canceled",
+            "Student_email_copy_hidden__c": "stephen.stanley@salesforce.com"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef60"
+            },
+            "Amount_Owed__c": 15,
+            "Casual_Fee_Paid__c": false,
+            "Fees_owed__c": 75,
+            "IsDeleted": false,
+            "Name": "CA-002805",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Waitlisted",
+            "Student_email_copy_hidden__c": "stephen.stanley@salesforce.com"
+        },
+        {
+            "attributes": {
+                "type": "Class_Attendance__c",
+                "referenceId": "Class_Attendance__cRef61"
+            },
+            "Amount_Owed__c": 0,
+            "Casual_Fee_Paid__c": true,
+            "Fees_owed__c": 15,
+            "IsDeleted": false,
+            "Name": "CA-000082",
+            "Payment_Method__c": "Casual",
+            "Status__c": "Booked"
+        }
+    ]
+}

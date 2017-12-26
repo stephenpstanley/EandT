@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Concession_Price__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The price for this class when a concession (pre-pay) card is used to pay for it.  It defaults to a 10% discount from the casual price</inlineHelpText>
+    <label>Concession Price</label>
+    <precision>5</precision>
+    <required>true</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>
